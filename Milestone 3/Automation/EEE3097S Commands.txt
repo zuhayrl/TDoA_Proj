@@ -1,0 +1,22 @@
+Record: 
+arecord -D plughw:0 -c2 -r 48000 -f S32_LE -t wav -V stereo -v file1.wav
+arecord -D plughw:0 -c2 -r 48000 -f S32_LE -t wav -V stereo -v file2.wav
+
+without interface and with timer:
+arecord -D plughw:0 -c2 -r 64000 -f S32_LE -t wav -q -d 15 file_test1.wav
+arecord -D plughw:0 -c2 -r 64000 -f S32_LE -t wav -q -d 15 file_test2.wav
+
+Check: arecord -l
+
+play: aplay filename
+
+Copy to PC from Pi: 
+scp zuhayr@raspberrypi2:file1.wav Downloads
+scp zuhayr@raspberrypi1:file2.wav Downloads
+scp zuhayr@raspberrypi2:file_stereo.wav Desktop
+
+SSH IPs: (ON iPhone 7) 
+Pi1: 172.20.10.6
+Pi2: 172.20.10.2
+PiZ: 172.20.10.5
+PW: zuhayr01
